@@ -5,7 +5,7 @@
 
 # Early Estimation of Language to Latent Alignment in Diffusion Models
 
-[![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](#)
+[![arXiv](https://img.shields.io/badge/arXiv-2512.08505-b31b1b.svg)](https://arxiv.org/abs/2512.08505)
 [![Project](https://img.shields.io/badge/Project-Website-9cf.svg)](https://novasearch.github.io/noisyclip/)
 
 
