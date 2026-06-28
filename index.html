@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base target="_blank">
+    <meta charset="utf-8">
+    <meta name="description"
+          content="Early Estimation of Language to Latent Alignment in Diffusion Models">
+    <meta name="keywords" content="Image Generation, Text-Image Alignment, Best-of-N, Diffusion Models, CLIP, Latent Space">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NoisyCLIP</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.png">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+
+                    <div class="title-header">
+                        <img src="static/images/noisyclip_logo.png" alt="NoisyCLIP Logo" class="title-logo">
+                        <h1 class="title is-1 publication-title">Early Estimation of Language to Latent
+                            Alignment in Diffusion Models</h1>
+                    </div>
+                    <h5 class="subtitle is-5 publication-awards"><a href="https://eccv.ecva.net/" target="_blank">ECCV 2026</a></h5>
+
+                    <div class="logo-container affiliation-logos">
+                        <span class="affiliation-logo">
+                            <img class="logo" src="static/images/nova-lincs-full.svg" alt="NOVA LINCS">
+                            <sup>1</sup>
+                        </span>
+                        <span class="affiliation-logo">
+                            <img class="logo" src="static/images/google-research-full.png" alt="Google Research">
+                            <sup>2</sup>
+                        </span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=g_lRa2YAAAAJ&hl=en"
+                   style="color:#008AD7;font-weight:normal;">Vasco Ramos<sup>1</sup></a>,
+            </span>
+                        <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=naMCufgAAAAJ&hl=en"
+                   style="color:#008AD7;font-weight:normal;">Regev Cohen<sup>2</sup></a>,
+            </span>
+                        <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=0qzwtZAAAAAJ"
+                   style="color:#008AD7;font-weight:normal;">Idan Szpektor<sup>2</sup></a>,
+            </span>
+                        <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=P6fBAXMAAAAJ&hl=en"
+                   style="color:#008AD7;font-weight:normal;">Joao Magalhaes<sup>1</sup></a>
+            </span>
+                    </div>
+
+                    <div class="is-size-6 publication-affiliations">
+                        <span><sup>1</sup>NOVA LINCS, NOVA University of Lisbon</span>
+                        <span class="affiliation-sep">&middot;</span>
+                        <span><sup>2</sup>Google Research</span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- Paper Link. -->
+                            <span class="link-block">
+                <a href="https://arxiv.org/abs/2512.08505"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+                            <!-- Code Link. -->
+                            <span class="link-block">
+                <a href="https://github.com/novasearch/noisyclip"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+                            <!-- Model Link (HuggingFace). -->
+                            <span class="link-block">
+                <a href="https://huggingface.co/asiimo/noisyclip"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <span class="hf-emoji">&#x1F917;</span>
+                  </span>
+                  <span>Model</span>
+                  </a>
+              </span>
+                            <!-- Dataset Link (HuggingFace). -->
+                            <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <span class="hf-emoji">&#x1F917;</span>
+                  </span>
+                  <span>Dataset</span>
+                  </a>
+              </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <a href="static/images/teaser.png" target="_blank">
+                <img src="static/images/teaser.png" alt="NoisyCLIP early alignment estimation and intermediate Best-of-N sampling">
+            </a>
+            <h2 class="subtitle has-text-centered" style="margin-top: 20px;">
+                While standard CLIP scores require near-complete generation to stabilize, <b>NoisyCLIP</b>
+                accurately predicts final image alignment at early denoising steps, enabling an intermediate
+                Best-of-N strategy that terminates unpromising trajectories and cuts compute by 50% while
+                retaining 98% of post-hoc CLIP performance.
+            </h2>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        Conditional diffusion models frequently suffer from language-image misalignments. Due to
+                        the ambiguity of intermediate noise-corrupted latents, assessing prompt adherence currently
+                        requires completing the entire sampling trajectory. This late-stage evaluation incurs even
+                        higher computational costs during test-time scaling strategies, such as Best-of-N (BoN)
+                        sampling, as all misaligned trajectories must finish generation before being discarded. To
+                        tackle this, we propose <b>NoisyCLIP</b>, a noise-aware twin-tower model that enables early
+                        language-to-latent alignment estimation. By learning a vision encoder on noise-corrupted
+                        latents, we allow the model to "see" through the ambiguity of intermediate diffusion steps.
+                        To facilitate this training, we investigate noise-data augmentation sampling strategies and
+                        introduce two new benchmark datasets: Noisy-Conceptual-Captions and Noisy-GenAI-Bench. When
+                        applied as an early-stopping criterion for BoN, NoisyCLIP at half cost matches or beats
+                        frozen CLIP at full cost. Ultimately, this transforms alignment assessment from an expensive
+                        final check into a continuous monitoring tool, drastically reducing compute costs without
+                        sacrificing semantic fidelity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Method / Pipeline. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+                <h2 class="title is-3">Method</h2>
+                <a href="static/images/pipeline.png" target="_blank">
+                    <img src="static/images/pipeline.png" alt="NoisyCLIP overall pipeline">
+                </a>
+                <div class="content has-text-justified" style="margin-top: 15px;">
+                    <p>
+                        A prompt is used to generate an image, and at an intermediate step the generated latent and
+                        the original prompt are encoded and their similarity is measured. NoisyCLIP produces a
+                        similarity score closely aligned with the score assessed on the final image, but already at
+                        intermediate stages of generation, allowing for the early identification of misalignments.
+                        We fine-tune only the visual encoder with a contrastive (InfoNCE) objective over
+                        noise-corrupted latents, keeping the text encoder frozen and shared with the diffusion
+                        model's conditioning space.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+
+        <!-- Language-to-Latent Alignment. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+                <h2 class="title is-3">Language-to-Latent Alignment</h2>
+                <p class="content has-text-justified">
+                    NoisyCLIP distinctly separates aligned from misaligned images as early as latent 20, whereas
+                    the frozen CLIP backbone only achieves this separation by latent 40. Our model also widens the
+                    score gap between the best and worst candidates throughout generation.
+                </p>
+                <div class="columns is-centered">
+                    <div class="column">
+                        <a href="static/images/delta_scores.png" target="_blank">
+                            <img src="static/images/delta_scores.png" alt="Delta scores across denoising steps">
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="static/images/best_vs_worst_noisyclip.png" target="_blank">
+                            <img src="static/images/best_vs_worst_noisyclip.png" alt="Best vs worst comparison (NoisyCLIP)">
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="static/images/best_vs_worst_clip.png" target="_blank">
+                            <img src="static/images/best_vs_worst_clip.png" alt="Best vs worst comparison (CLIP)">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Early-Stopping Best-of-N. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Early-Stopping Best-of-N</h2>
+                <p class="content has-text-justified">
+                    Used as an early-stopping ranker for Best-of-N sampling, NoisyCLIP reduces the computational
+                    budget by 50% with a minimal drop in VQAScore, and at this reduced budget it outperforms all
+                    baselines (CLIP, LatentCLIP) by nearly 2%.
+                </p>
+                <a href="static/images/cost_vs_vqa.png" target="_blank">
+                    <img src="static/images/cost_vs_vqa.png" alt="Alignment (VQAScore) versus Best-of-N denoising cost">
+                </a>
+            </div>
+        </div>
+
+        <!-- Impact of Training Latent Ranges. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Impact of Training Latent Ranges</h2>
+                <p class="content has-text-justified">
+                    Performance across inference ranges (columns) when trained with different latent ranges (rows).
+                    Moderate training noise (latents 20&ndash;29) strikes the best balance, remaining competitive
+                    with low-noise training in later inference ranges while performing better in the earlier,
+                    high-noise ranges.
+                </p>
+                <a href="static/images/latent_ranges_heatmap.png" target="_blank">
+                    <img src="static/images/latent_ranges_heatmap.png" alt="Performance heatmap across training and inference latent ranges">
+                </a>
+            </div>
+        </div>
+
+        <!-- Generalization. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Generalization to DiT Architectures</h2>
+                <p class="content has-text-justified">
+                    Although trained only on SDXL data, NoisyCLIP transfers zero-shot to DiT-based architectures,
+                    achieving a +2% alignment gain on Stable Diffusion 3.5 and +1.8% on FLUX.1, alongside a 57%
+                    reduction in denoising steps.
+                </p>
+                <a href="static/images/generalization.png" target="_blank">
+                    <img src="static/images/generalization.png" alt="Alignment versus computational cost for zero-shot generalization on DiTs"
+                         style="max-width: 480px;">
+                </a>
+            </div>
+        </div>
+
+        <!-- Qualitative Results. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+                <h2 class="title is-3">Qualitative Results</h2>
+                <p class="subtitle is-6">(click to enlarge)</p>
+                <a href="static/images/qualitative.png" target="_blank">
+                    <img src="static/images/qualitative.png" alt="Qualitative Best-of-6 selection comparison">
+                </a>
+                <div class="content has-text-justified" style="margin-top: 15px;">
+                    <p>
+                        Images generated using a Best-of-6 strategy. We compare NoisyCLIP with CLIP and
+                        LatentCLIP-4-plus under two computation budgets: 150 and 300 diffusion steps. Our approach
+                        surpasses the baseline at the 150-step limit and achieves comparable or superior alignment
+                        to the full 300-step baselines, preserving fine-grained compositional attributes at half
+                        the computation.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>TO BE UPDATED</code></pre>
+    </div>
+</section>
+
+<section>
+
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p>
+                        This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a
+                        <a rel="license"
+                           href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                            Commons Attribution-ShareAlike 4.0 International License</a>.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,245 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.example-container {
+  height: 550px;
+  overflow-y: scroll;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  margin: 0 10px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Affiliation logos shown above the author list, each with a superscript marker. */
+.affiliation-logos {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  gap: 35px;
+}
+
+.affiliation-logo {
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+.affiliation-logo .logo {
+  margin: 0;
+  max-height: 55px;
+  width: auto;
+}
+
+.affiliation-logo sup {
+  font-size: 0.85rem;
+  color: #777;
+  margin-left: 4px;
+  margin-top: 2px;
+}
+
+/* Small grey affiliation legend below the author list. */
+.publication-affiliations {
+  margin-top: 10px;
+  color: #777;
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-affiliations .affiliation-sep {
+  margin: 0 8px;
+  color: #bbb;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* HuggingFace emoji used as the icon for the Model/Dataset buttons. */
+.hf-emoji {
+    font-size: 1.05em;
+    line-height: 1;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+/* NoisyCLIP mascot badge shown inline to the left of the title. */
+.title-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin-bottom: 0.6rem;
+}
+
+.title-header .title-logo {
+    width: 92px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.title-header .publication-title {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .title-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: 100%;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: 100%;
+    font-weight: bolder;
+}
+
+.publication-awards a {
+  color: #ff3860;
+}
+
+
+.publication-awards a:hover {
+  text-decoration: underline
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}
