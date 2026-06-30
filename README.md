@@ -21,9 +21,6 @@ This is the official repository for Early Estimation of Language to Latent Align
 `src/latent_to_image.py` - converts saved latent tensors into RGB representations
 
 `src/train_model_classic.py` - trains a CLIP or SigLIP model using the preprocessed datasets
-
-`appendix.pdf` - supplementary material with additional results and ablations
-
 ## Usage
 
 1. **Generate Corrupted Prompts** — prepare a dataset and run `corrupt_prompts.py` to create non-factual captions.
@@ -37,5 +34,13 @@ This is the official repository for Early Estimation of Language to Latent Align
 ## Citation
 If you find NoisyCLIP useful for your research and applications, please cite using this BibTeX:
 ```
-TO BE UPDATED
+@misc{ramos2026earlyestimationlanguagelatent,
+      title={Early Estimation of Language to Latent Alignment in Diffusion Models}, 
+      author={Vasco Ramos and Regev Cohen and Idan Szpektor and Joao Magalhaes},
+      year={2026},
+      eprint={2512.08505},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2512.08505}, 
+}
 ```
